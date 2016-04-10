@@ -1,0 +1,21 @@
+body {
+    background-color: #D3D3D3;
+}
+
+label {
+    pointer-events: none;
+    font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.labelCheckRadio {
+    pointer-events: auto;
+}
+
+.table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border: none;
+}
+
+.answerInput {
+    cursor: text;
+}
