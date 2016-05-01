@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Sword calculation
-    $('#swdAnsBtn').click(function() {
+    $('#swdAnsBtn').click(function () {
         var str = $('#swdStr').val();
         var quick = $('#swdQuick').val();
         var wepDmg = $('#swdWepDmg').val();
@@ -10,14 +10,14 @@ $(document).ready(function() {
     });
 
     // Sword reset
-    $('#swdReset').click(function() {
+    $('#swdReset').click(function () {
         $('#swdStr').val('');
         $('#swdQuick').val('');
         $('#swdWepDmg').val('');
     });
 
     // Magic calculation
-    $('#magAnsBtn').click(function() {
+    $('#magAnsBtn').click(function () {
         var lvl = $('#magLvl').val();
         var intel = $('#magIntel').val();
         var dex = $('#magDex').val();
@@ -29,7 +29,7 @@ $(document).ready(function() {
     });
 
     // Magic reset
-    $('#magReset').click(function() {
+    $('#magReset').click(function () {
         $('#magLvl').val('');
         $('#magIntel').val('');
         $('#magDex').val('');
@@ -38,7 +38,7 @@ $(document).ready(function() {
     });
 
     // Gun calculation
-    $('#gunAnsBtn').click(function() {
+    $('#gunAnsBtn').click(function () {
         var dex = $('#gunDex').val();
         var quick = $('#gunQuick').val();
         var wepDmg = $('#gunWepDmg').val();
@@ -48,14 +48,14 @@ $(document).ready(function() {
     });
 
     // Gun reset
-    $('#gunReset').click(function() {
+    $('#gunReset').click(function () {
         $('#gunDex').val('');
         $('#gunQuick').val('');
         $('#gunWepDmg').val('');
     });
 
     // Skill Points
-    $('#spAnsBtn').click(function() {
+    $('#spAnsBtn').click(function () {
         var swd = $('#spSwdSkill').val();
         var mag = $('#spMagSkill').val();
         var gun = $('#spGunSkill').val();
@@ -104,7 +104,7 @@ $(document).ready(function() {
     });
 
     // Skill Points reset
-    $('#spReset').click(function() {
+    $('#spReset').click(function () {
         $('#spSwdSkill').val('');
         $('#spMagSkill').val('');
         $('#spGunSkill').val('');
@@ -115,7 +115,7 @@ $(document).ready(function() {
     });
 
     // Health
-    $('#hpAnsBtn').click(function() {
+    $('#hpAnsBtn').click(function () {
         var lvl = $('#hpLevel').val();
         var con = $('#hpCon').val();
 
@@ -124,13 +124,13 @@ $(document).ready(function() {
     });
 
     // Health reset
-    $('#hpReset').click(function() {
+    $('#hpReset').click(function () {
         $('#hpLevel').val('');
         $('#hpCon').val('');
     });
 
     // Defense
-    $('#defAnsBtn').click(function() {
+    $('#defAnsBtn').click(function () {
         var armPro = $('#defArmPro').val();
         var ringPro = $('#defRingPro').val();
         var quick = $('#defQuick').val();
@@ -144,14 +144,14 @@ $(document).ready(function() {
     });
 
     // Defense reset
-    $('#defReset').click(function() {
+    $('#defReset').click(function () {
         $('#defArmPro').val('');
         $('#defRingPro').val('');
         $('#defQuick').val('');
     });
 
     // Animals on a Farm
-    $('#animAnsBtn').click(function() {
+    $('#animAnsBtn').click(function () {
         var heads = $('#animHeads').val();
         var legs = $('#animLegs').val();
 
@@ -190,13 +190,13 @@ $(document).ready(function() {
     });
 
     // Animals on a Farm reset
-    $('#animReset').click(function() {
+    $('#animReset').click(function () {
         $('#animHeads').val('');
         $('#animLegs').val('');
     });
 
     // Current/Future Age
-    $('#curFutAnsBtn').click(function() {
+    $('#curFutAnsBtn').click(function () {
         var current = $('#curFutAge').val();
         var future = $('#curFutAge').val();
         var years = $('#curFutYears').val();
@@ -214,13 +214,13 @@ $(document).ready(function() {
     });
 
     // Current/Future Age reset
-    $('#curFutReset').click(function() {
+    $('#curFutReset').click(function () {
         $('#curFutAge').val('');
         $('#curFutYears').val('');
     });
 
     // Gallons of Liquid
-    $('#golAnsBtn').click(function() {
+    $('#golAnsBtn').click(function () {
         var gallons = $('#golGal').val();
         var containers = $('#golCon').val();
 
@@ -229,7 +229,7 @@ $(document).ready(function() {
     });
 
     // Gallons of Liquid reset
-    $('#golReset').click(function() {
+    $('#golReset').click(function () {
         $('#golGal').val('');
         $('#golCon').val('');
     });
