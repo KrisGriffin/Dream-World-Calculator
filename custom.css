@@ -18,10 +18,10 @@ label {
 
 .answerInput {
     cursor: text;
-    width: 100%;
     font-weight: bold;
     color: #1793d0;
     text-align: center;
+    width: 174px;
 }
 
 #header-align {
