@@ -13,468 +13,328 @@
 <body>
     <!-- Fixed top alert -->
     <div class="container-fluid alert-info" id="header-align">
-        <p class="pull-left"><strong>Last updated: </strong>03/05/2016 (British style)</p>
+        <p class="pull-left"><strong>Last updated: </strong>07/05/2016 (British style)</p>
         <p class="pull-right"><strong>GitHub:</strong>
             <a href="https://github.com/KrisGriffin" class="alert-link" target="_blank">https://github.com/KrisGriffin</a>
         </p>
     </div>
 
-    <h2 class="text-center">Dream World Calculator</h2>
     <div class="container">
         <!-- Navigation tabs -->
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#attackMp">Attack & MP <span class="caret"></span> </a></li>
-            <li><a data-toggle="tab" href="#skillPoints">Skill Points <span class="caret"></span> </a></li>
-            <li><a data-toggle="tab" href="#hpDef">HP & Defense <span class="caret"></span> </a></li>
-            <li><a data-toggle="tab" href="#chest">Chest <span class="caret"></span> </a></li>
+        <ul class="nav nav-pills nav-justified">
+            <li class="active" id="attkMpTab">
+                <a data-toggle="pill" href="#attackMp"> Attack & MP <span class="glyphicon glyphicon-hand-left" id="attkMpSpan"></span></a>
+            </li>
+            <li id="spTab">
+                <a data-toggle="pill" href="#skillPoints"> Skill Points <span class="glyphicon glyphicon-hand-left" id="spSpan"></span></a>
+            </li>
+            <li id="hpDefTab">
+                <a data-toggle="pill" href="#hpDef"> HP & Defense <span class="glyphicon glyphicon-hand-left" id="hpDefSpan"></span></a>
+            </li>
+            <li id="chestTab">
+                <a data-toggle="pill" href="#chest"> Chest <span class="glyphicon glyphicon-hand-left" id="chestSpan"></span></a>
+            </li>
         </ul>
 
         <div class="tab-content">
-            <!-- Attack content -->
-            <div id="attackMp" class="tab-pane fade in active">
-                <table class="table table-responsive table-borderless">
-                    <thead>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="swdReset">Reset</button> Sword
-                        </th>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="magReset">Reset</button> Magic
-                        </th>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="gunReset">Reset</button> Gun
-                        </th>
-                    </thead>
-                    <!-- Row 1 -->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label for="swdStr">Strength:</label>
-                                <input type="text" class="pull-right" id="swdStr" tabindex="1">
-                            </td>
-                            <td>
-                                <label for="magLvl">Level:</label>
-                                <input type="text" class="pull-right" id="magLvl" tabindex="4">
-                            </td>
-                            <td>
-                                <label for="gunDex">Dexterity:</label>
-                                <input type="text" class="pull-right" id="gunDex" tabindex="9">
-                            </td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>
-                                <label for="swdQuick">Quickness:</label>
-                                <input type="text" class="pull-right" id="swdQuick" tabindex="2">
-                            </td>
-                            <td>
-                                <label for="magIntel">Intelligence:</label>
-                                <input type="text" class="pull-right" id="magIntel" tabindex="5">
-                            </td>
-                            <td>
-                                <label for="gunQuick">Quickness:</label>
-                                <input type="text" class="pull-right" id="gunQuick" tabindex="10">
-                            </td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>
-                                <label for="swdWepDmg">Weapon Damage:</label>
-                                <input type="text" class="pull-right" id="swdWepDmg" tabindex="3">
-                            </td>
-                            <td>
-                                <label for="magDex">Dexterity:</label>
-                                <input type="text" class="pull-right" id="magDex" tabindex="6">
-                            </td>
-                            <td>
-                                <label for="gunWepDmg">Weapon Damage:</label>
-                                <input type="text" class="pull-right" id="gunWepDmg" tabindex="11">
-                            </td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td></td>
-                            <td>
-                                <label for="magClassDmg">Class Magic Damage:</label>
-                                <input type="text" class="pull-right" id="magClassDmg" tabindex="7">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td></td>
-                            <td>
-                                <label for="magSpellDmg">Staff Spell Damage:</label>
-                                <input type="text" class="pull-right" id="magSpellDmg" tabindex="8">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 6 -->
-                        <tr>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="swdRes" placeholder="Attack..." readonly>
-                            </td>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="magRes" placeholder="Magic Power..." readonly>
-                            </td>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="gunRes" placeholder="Attack..." readonly>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <!-- Sword & Gun help -->
-                    <tr>
-                        <thead>
-                            <th class="text-center" colspan="3">
-                                <h3>Help</h3>
-                            </th>
-                        </thead>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Sword & Gun</small></h2>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p><strong>Strength/Quickness:</strong> Character screen - under Attributes</p>
-                            <p><strong>Weapon Damage:</strong> Character screen - hover over your sword, but do not include the (+enchants)</p>
-                        </td>
-                    </tr>
-                    <!-- Magic help -->
-                    <tr>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Magic</small></h2></th>
-                        </thead>
-                        <td colspan="3">
-                            <p><strong>Level:</strong> Top left - do not include the decimal</p>
-                            <p><strong>Intelligence/Dexterity:</strong> Character screen under Attributes</p>
-                            <p><strong>Class Magic Damage:</strong> Class screen - the 6 classes this applies to are: Mage (+5), Adept (+8), Master Mage (+12), Great Wizard (+16), Divine Staff (+32) and Divine Sage (+64)</p>
-                            <p><strong>Staff Spell Damage:</strong> Character screen - hover over your staff. If you have a staff where the Spell Damage is similar to +946.80005 for example, you will only need to enter 946.8</p>
-                        </td>
-                    </tr>
-                </table>
+            <div id="attackMp" class="tab-pane fade in active row">
+                <!-- Sword -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-spacing">Sword
+                                <button type="button" class="btn btn-danger pull-left" id="swdReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="swdStr">Strength:</label>
+                            <input type="text" class="form-control" id="swdStr" tabindex="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="swdQuick">Quickness:</label>
+                            <input type="text" class="form-control" id="swdQuick" tabindex="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="swdWepDmg">Weapon Damage:</label>
+                            <input type="text" class="form-control" id="swdWepDmg" tabindex="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="swdRes" class="ans-label">Attack =</label>
+                            <input type="text" class="form-control answerInput attk-ans-margin" id="swdRes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <!-- Magic -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-spacing">Magic
+                                <button type="button" class="btn btn-danger pull-left" id="magReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="magLvl">Level:</label>
+                            <input type="text" class="form-control" id="magLvl" tabindex="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="magIntel">Intelligence:</label>
+                            <input type="text" class="form-control" id="magIntel" tabindex="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="magDex">Dexterity:</label>
+                            <input type="text" class="form-control" id="magDex" tabindex="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="magClassDmg">Class Magic Damage:</label>
+                            <input type="text" class="form-control" id="magClassDmg" tabindex="7">
+                        </div>
+                        <div class="form-group">
+                            <label for="magSpellDmg">Staff Spell Damage:</label>
+                            <input type="text" class="form-control" id="magSpellDmg" tabindex="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="magRes" class="ans-label">Magic Power =</label>
+                            <input type="text" class="form-control answerInput" id="magRes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <!-- Gun -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-spacing">Gun
+                                <button type="button" class="btn btn-danger pull-left" id="gunReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="gunDex">Dexterity:</label>
+                            <input type="text" class="form-control" id="gunDex" tabindex="9">
+                        </div>
+                        <div class="form-group">
+                            <label for="gunQuick">Quickness:</label>
+                            <input type="text" class="form-control" id="gunQuick" tabindex="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="gunWepDmg">Weapon Damage:</label>
+                            <input type="text" class="form-control" id="gunWepDmg" tabindex="11">
+                        </div>
+                        <div class="form-group">
+                            <label for="gunRes" class="ans-label">Attack =</label>
+                            <input type="text" class="form-control answerInput attk-ans-margin" id="gunRes" readonly>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Skill Points content -->
             <div id="skillPoints" class="tab-pane fade">
-                <table class="table table-responsive table-borderless">
-                    <thead>
-                        <th colspan="3">
-                            <button type="reset" class="btn btn-danger btn-sm" id="spReset">Reset</button>
-                        </th>
-                    </thead>
-                    <!-- Row 1 -->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label for="spSwdSkill">Sword Skill:</label>
-                                <input type="text" class="pull-right" id="spSwdSkill" tabindex="1">
-                            </td>
-
-                            <td>
-                                <label class="pull-left">Select your items:</label>
-                                <div class="btn-group pull-right" data-toggle="buttons">
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="checkbox" id="spSkillCaps"> Skill Capsule
-                                    </label>
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="checkbox" id="spSkillRing"> Skill Ring
-                                    </label>
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="checkbox" id="spGuildRing"> Guild Ring
-                                    </label>
-                                </div>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>
-                                <label for="spMagSkill">Magic Skill:</label>
-                                <input type="text" class="pull-right" id="spMagSkill" tabindex="2">
-                            </td>
-                            <td>
-                                <label for="spFactPts">Faction Points:</label>
-                                <input type="text" class="pull-right" id="spFactPts" tabindex="5">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>
-                                <label for="spGunSkill">Gun Skill:</label>
-                                <input type="text" class="pull-right" id="spGunSkill" tabindex="3">
-                            </td>
-                            <td>
-                                <label for="spClassBonus">Class Bonus:</label>
-                                <input type="text" class="pull-right" id="spClassBonus" tabindex="6">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>
-                                <label for="spIntel">Intelligence:</label>
-                                <input type="text" class="pull-right" id="spIntel" tabindex="4">
-                            </td>
-                            <td>
-                                <label for="spGuildBonus">Guild Bonus:</label>
-                                <input type="text" class="pull-right" id="spGuildBonus" tabindex="7">
-
-                            </td>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="spRes" placeholder="Skill Points..." readonly>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <!-- Skill Points help -->
-                    <tr>
-                        <thead>
-                            <th class="text-center" colspan="3">
-                                <h3>Help</h3>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p><strong>Skills:</strong> Character screen - bottom left</p>
-                            <p><strong>Intelligence:</strong> Character screen - under Attributes</p>
-                            <p><strong>Class Bonus:</strong> Class Screen - (+X max sp) X being the text you enter. This does not apply to dual classes</p>
-                            <p><strong>Guild Bonus:</strong> Guild screen - Guild Info</p>
-                            <p><strong>Faction Points:</strong> Character screen - under exp to lvl. You only need to enter your current points</p>
-                            <p><strong>Guild/Skill Ring:</strong> Inventory - hover over the ring</p>
-                            <p><strong>Skill Capsule:</strong> Inventory - under Premium Items</p>
-                        </td>
-                    </tr>
-                </table>
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="spSwdSkill">Sword Skill:</label>
+                            <input type="text" class="form-control" id="spSwdSkill" tabindex="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="spMagSkill">Magic Skill:</label>
+                            <input type="text" class="form-control" id="spMagSkill" tabindex="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="spGunSkill">Gun Skill:</label>
+                            <input type="text" class="form-control" id="spGunSkill" tabindex="3">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="spIntel">Intelligence:</label>
+                            <input type="text" class="form-control" id="spIntel" tabindex="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="spFactPts">Faction Points:</label>
+                            <input type="text" class="form-control" id="spFactPts" tabindex="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="spClassBonus">Class Bonus:</label>
+                            <input type="text" class="form-control" id="spClassBonus" tabindex="6">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="spGuildBonus">Guild Bonus:</label>
+                            <input type="text" class="form-control" id="spGuildBonus" tabindex="7">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="checkbox" id="spSkillCaps"> Skill Capsule </label>
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="checkbox" id="spSkillRing"> Skill Ring </label>
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="checkbox" id="spGuildRing"> Guild Ring </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spRes" class="ans-label">Skill Points =</label>
+                            <input type="text" class="form-control answerInput" id="spRes" readonly>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-danger btn-block" id="spReset">RESET</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Health/Defense content -->
             <div id="hpDef" class="tab-pane fade">
-                <table class="table table-responsive table-borderless">
-                    <thead>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="hpReset">Reset</button> Health
-                        </th>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="defReset">Reset</button> Defense
-                        </th>
-                        <th></th>
-                    </thead>
-                    <!-- Row 1 -->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label for="hpLevel">Level:</label>
-                                <input type="text" class="pull-right" id="hpLevel" tabindex="1">
-                            </td>
-                            <td>
-                                <label for="defArmPro">Armour Protection:</label>
-                                <input type="text" class="pull-right" id="defArmPro" tabindex="3">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>
-                                <label for="hpCon">Constitution:</label>
-                                <input type="text" class="pull-right" id="hpCon" tabindex="2">
-                            </td>
-                            <td>
-                                <label for="defRingPro">Ring Protection:</label>
-                                <input type="text" class="pull-right" id="defRingPro" tabindex="4">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td></td>
-                            <td>
-                                <label for="defQuick">Quickness:</label>
-                                <input type="text" class="pull-right" id="defQuick" tabindex="5">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="hpRes" placeholder="HP..." readonly>
-                            </td>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="defRes" placeholder="Defense..." readonly>
-                            </td>
-                            <td class="col-md-5"></td>
-                        </tr>
-                    </tbody>
-                    <!-- HP & Defense help -->
-                    <tr>
-                        <thead>
-                            <th class="text-center" colspan="3">
-                                <h3>Help</h3>
-                            </th>
-                        </thead>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Health</small></h2>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p><strong>Level:</strong> Top left - do not include the decimal</p>
-                            <p><strong>Constitution:</strong> Character screen - under Attributes</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Defense</small></h2>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p><strong>Armour/Ring:</strong> Inventory - hover over your armour and ring, but do not include the (+enchants)</p>
-                            <p><strong>Quickness:</strong> Character screen - under Attributes</p>
-                        </td>
-                    </tr>
-                </table>
+                <!-- Health -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-spacing">Health
+                                <button type="button" class="btn btn-danger pull-left" id="hpReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="hpLevel">Level:</label>
+                            <input type="text" class="form-control" id="hpLevel" tabindex="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="hpCon">Constitution:</label>
+                            <input type="text" class="form-control" id="hpCon" tabindex="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hpRes" class="ans-label">Health =</label>
+                            <input type="text" class="form-control answerInput hp-ans-margin" id="hpRes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <!-- Defense -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-spacing">Defense
+                                <button type="button" class="btn btn-danger pull-left" id="defReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="defArmPro">Armour Protection:</label>
+                            <input type="text" class="form-control" id="defArmPro" tabindex="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="defRingPro">Ring Protection:</label>
+                            <input type="text" class="form-control" id="defRingPro" tabindex="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="defQuick">Quickness:</label>
+                            <input type="text" class="form-control" id="defQuick" tabindex="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="defRes" class="ans-label">Defense =</label>
+                            <input type="text" class="form-control answerInput" id="defRes" readonly>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Chest content -->
             <div id="chest" class="tab-pane fade">
-                <table class="table table-responsive table-borderless">
-                    <thead>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="animReset">Reset</button> Animals on a Farm
-                        </th>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="curFutReset">Reset</button> Current/Future Age
-                        </th>
-                        <th class="text-center">
-                            <button type="reset" class="btn btn-danger btn-sm pull-left" id="golReset">Reset</button> Gallons of Liquid
-                        </th>
-                    </thead>
-                    <!-- Row 1 -->
-                    <tbody>
-                        <tr>
-                            <td>
-                                <label class="pull-left">Select 2 animals:</label>
-                                <div class="btn-group pull-right" data-toggle="buttons">
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="checkbox" id="checkChickens"> Chickens
-                                    </label>
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="checkbox" id="checkCows"> Cows
-                                    </label>
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="checkbox" id="checkHorses"> Horses
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <label class="pull-left">Select a tense:</label>
-                                <div class="btn-group pull-right" data-toggle="buttons">
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="radio" name="ageTense" id="radioCurrent"> Current
-                                    </label>
-                                    <label class="btn btn-primary btn-sm labelCheckRadio">
-                                        <input type="radio" name="ageTense" id="radioFuture"> Future
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <label for="golGal">Gallons:</label>
-                                <input type="text" class="pull-right" id="golGal" tabindex="5">
-                            </td>
-                        </tr>
-                        <!-- Row 2 -->
-                        <tr>
-                            <td>
-                                <label for="animHeads">Heads:</label>
-                                <input type="text" class="pull-right" id="animHeads" tabindex="1">
-                            </td>
-                            <td>
-                                <label for="curFutAge">Age:</label>
-                                <input type="text" class="pull-right" id="curFutAge" tabindex="3">
-                            </td>
-                            <td>
-                                <label for="golCon">Containers:</label>
-                                <input type="text" class="pull-right" id="golCon" tabindex="6">
-                            </td>
-                        </tr>
-                        <!-- Row 3 -->
-                        <tr>
-                            <td>
-                                <label for="animLegs">Legs:</label>
-                                <input type="text" class="pull-right" id="animLegs" tabindex="2">
-                            </td>
-                            <td>
-                                <label for="curFutYears">Years:</label>
-                                <input type="text" class="pull-right" id="curFutYears" tabindex="4">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 4 -->
-                        <tr>
-                            <td>
-                                <input type="text" class="pull-right answerInput" placeholder="Chickens..." id="animChickRes" readonly>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td>
-                                <input type="text" class="pull-right answerInput" placeholder="Cows..." id="animCowRes" readonly>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <!-- Row 5 -->
-                        <tr>
-                            <td>
-                                <input type="text" class="pull-right answerInput" placeholder="Horses..." id="animHorseRes" readonly>
-                            </td>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="curFutRes" placeholder="Age..." readonly>
-                            </td>
-                            <td>
-                                <input type="text" class="pull-right answerInput" id="golRes" placeholder="Containers..." readonly>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <!-- Chest help -->
-                    <tr>
-                        <thead>
-                            <th class="text-center" colspan="3">
-                                <h3>Help</h3>
-                            </th>
-                        </thead>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Animals on a Farm</small></h2>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p>Select the 2 animals which are asked, enter the text of heads and legs and click the answer button
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Current/Future Age</small></h2></th>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p>Select either Current or Future depending on what is being asked, enter the Age and Years and click the answer button</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <thead>
-                            <th colspan="3">
-                                <h2><small>Gallons of Liquid</small></h2></th>
-                            </th>
-                        </thead>
-                        <td colspan="3">
-                            <p>Enter the amount of gallons/containers and click the answer button</p>
-                        </td>
-                    </tr>
-                </table>
+                <!-- Animals on a Farm -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-btn-margin">Animals on a Farm
+                                <button type="button" class="btn btn-danger pull-left" id="animReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="checkbox" id="checkChickens"> Chickens </label>
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="checkbox" id="checkCows"> Cows </label>
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="checkbox" id="checkHorses"> Horses </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="animHeads">Heads:</label>
+                            <input type="text" class="form-control" id="animHeads" tabindex="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="animLegs">Legs:</label>
+                            <input type="text" class="form-control" id="animLegs" tabindex="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="animChickRes" class="ans-label">Chickens =</label>
+                            <input type="text" class="form-control answerInput" id="animChickRes" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="animCowRes" class="ans-label">Cows =</label>
+                            <input type="text" class="form-control answerInput" id="animCowRes" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="animHorseRes" class="ans-label">Horses =</label>
+                            <input type="text" class="form-control answerInput" id="animHorseRes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <!-- Current/Future Age -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center header-btn-margin">Current/Future Age
+                                <button type="button" class="btn btn-danger pull-left" id="curFutReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="radio" id="radioCurrent"> Current </label>
+                                <label class="btn btn-primary btn-md labelCheckRadio">
+                                    <input type="radio" id="radioFuture"> Future </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="curFutAge">Age:</label>
+                            <input type="text" class="form-control" id="curFutAge" tabindex="3">
+                        </div>
+                        <div class="form-group">
+                            <label for="curFutYears">Years:</label>
+                            <input type="text" class="form-control" id="curFutYears" tabindex="4">
+                        </div>
+                        <div class="form-group">
+                            <label for="curFutRes" class="ans-label">Age =</label>
+                            <input type="text" class="form-control answerInput" id="curFutRes" readonly>
+                        </div>
+                    </form>
+                </div>
+                <!-- Gallons of Liquid -->
+                <div class="col-md-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <h3 class="text-center gol-margin-fix">Gallons of Liquid
+                                <button type="button" class="btn btn-danger pull-left" id="golReset">RESET</button>
+                            </h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="golGal">Gallons:</label>
+                            <input type="text" class="form-control" id="golGal" tabindex="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="golCon">Containers:</label>
+                            <input type="text" class="form-control" id="golCon" tabindex="6">
+                        </div>
+                        <div class="form-group">
+                            <label for="golRes" class="ans-label">Containers =</label>
+                            <input type="text" class="form-control answerInput" id="golRes" readonly>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

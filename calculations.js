@@ -213,6 +213,39 @@ $(document).ready(function () {
         $("#golCon").val("");
     });
 
+    /* Tab glyphicons */
+    $("#attkMpSpan").show();
+    $("#spSpan").hide();
+    $("#hpDefSpan").hide();
+    $("#chestSpan").hide();
+
+    $("#attkMpTab").click(function () {
+        $("#attkMpSpan").show();
+        $("#spSpan").hide();
+        $("#hpDefSpan").hide();
+        $("#chestSpan").hide();
+    });
+
+    $("#spTab").click(function () {
+        $("#attkMpSpan").hide();
+        $("#spSpan").show();
+        $("#hpDefSpan").hide();
+        $("#chestSpan").hide();
+    });
+
+    $("#hpDefTab").click(function () {
+        $("#attkMpSpan").hide();
+        $("#spSpan").hide();
+        $("#hpDefSpan").show();
+        $("#chestSpan").hide();
+    });
+
+    $("#chestTab").click(function () {
+        $("#attkMpSpan").hide();
+        $("#spSpan").hide();
+        $("#hpDefSpan").hide();
+        $("#chestSpan").show();
+    });
 
 
 
