@@ -130,89 +130,6 @@ $(document).ready(function () {
         $("#defQuick").val("");
     });
 
-    /* Chest calculations */
-    function chestAnimalsFarm() {
-        var heads = $("#animHeads").val();
-        var legs = $("#animLegs").val();
-
-        if ($("#checkChickens").prop("checked") && $("#checkCows").prop("checked")) {
-            var chickens = 3 * heads - legs;
-            var cows = legs - 2 * heads;
-
-            $("#animChickRes").val(chickens);
-            $("#animCowRes").val(cows);
-            $("#animHorseRes").val("");
-        }
-
-        if ($("#checkChickens").prop("checked") && $("#checkHorses").prop("checked")) {
-            var chickens = 12;
-            var horses = 54;
-
-            $("#animChickRes").val(chickens);
-            $("#animHorseRes").val(horses);
-            $("#animCowRes").val("");
-        }
-
-        if ($("#checkCows").prop("checked") && $("#checkHorses").prop("checked")) {
-            var cows = 4 * heads - legs;
-            var horses = legs - 3 * heads;
-
-            $("#animCowRes").val(cows);
-            $("#animHorseRes").val(horses);
-            $("#animChickRes").val("");
-        }
-
-        if ($("#checkChickens").prop("checked") && $("#checkCows").prop("checked") && $("#checkHorses").prop("checked")) {
-            $("#animChickRes").val("");
-            $("#animCowRes").val("");
-            $("#animHorseRes").val("");
-        }
-    }
-
-    $("#animHeads, #animLegs").on("input", chestAnimalsFarm);
-
-    $("#animReset").click(function () {
-        $("#animHeads").val("");
-        $("#animLegs").val("");
-    });
-
-    function chestAge() {
-        var current = $("#curFutAge").val();
-        var future = $("#curFutAge").val();
-        var years = $("#curFutYears").val();
-
-        if ($("#radioCurrent").prop("checked")) {
-            var answer = +current + +years;
-            $("#curFutRes").val(answer);
-            $("#radioFuture").prop("checked", false)
-        }
-
-        if ($("#radioFuture").prop("checked")) {
-            var answer = future - years;
-            $("#curFutRes").val(answer);
-        }
-    }
-    $("#curFutAge, #curFutAge, #curFutYears").on("input", chestAge);
-
-    $("#curFutReset").click(function () {
-        $("#curFutAge").val("");
-        $("#curFutYears").val("");
-    });
-
-    function chestGalCon() {
-        var gallons = $("#golGal").val();
-        var containers = $("#golCon").val();
-
-        var answer = Math.floor(gallons / containers);
-        $("#golRes").val(answer);
-    }
-    $("#golGal, #golCon").on("input", chestGalCon);
-
-    $("#golReset").click(function () {
-        $("#golGal").val("");
-        $("#golCon").val("");
-    });
-
     /* Tab glyphicons */
     $("#attkMpSpan").show();
     $("#spSpan").hide();
@@ -239,17 +156,6 @@ $(document).ready(function () {
         $("#hpDefSpan").show();
         $("#chestSpan").hide();
     });
-
-    $("#chestTab").click(function () {
-        $("#attkMpSpan").hide();
-        $("#spSpan").hide();
-        $("#hpDefSpan").hide();
-        $("#chestSpan").show();
-    });
-
-
-
-
 
     // End of document.ready
 });

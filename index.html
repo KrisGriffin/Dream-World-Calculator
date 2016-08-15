@@ -31,11 +31,9 @@
             <li id="hpDefTab">
                 <a data-toggle="pill" href="#hpDef"> HP & Defense <span class="glyphicon glyphicon-hand-left" id="hpDefSpan"></span></a>
             </li>
-            <li id="chestTab">
-                <a data-toggle="pill" href="#chest"> Chest <span class="glyphicon glyphicon-hand-left" id="chestSpan"></span></a>
-            </li>
         </ul>
 
+        <!-- Attack content -->
         <div class="tab-content">
             <div id="attackMp" class="tab-pane fade in active row">
                 <!-- Sword -->
@@ -241,101 +239,6 @@
                 </div>
             </div>
 
-            <!-- Chest content -->
-            <div id="chest" class="tab-pane fade">
-                <!-- Animals on a Farm -->
-                <div class="col-md-4">
-                    <form role="form">
-                        <div class="form-group">
-                            <h3 class="text-center header-btn-margin">Animals on a Farm
-                                <button type="button" class="btn btn-danger pull-left" id="animReset">RESET</button>
-                            </h3>
-                        </div>
-                        <div class="form-group">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary btn-md labelCheckRadio">
-                                    <input type="checkbox" id="checkChickens"> Chickens </label>
-                                <label class="btn btn-primary btn-md labelCheckRadio">
-                                    <input type="checkbox" id="checkCows"> Cows </label>
-                                <label class="btn btn-primary btn-md labelCheckRadio">
-                                    <input type="checkbox" id="checkHorses"> Horses </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="animHeads">Heads:</label>
-                            <input type="text" class="form-control" id="animHeads" tabindex="1">
-                        </div>
-                        <div class="form-group">
-                            <label for="animLegs">Legs:</label>
-                            <input type="text" class="form-control" id="animLegs" tabindex="2">
-                        </div>
-                        <div class="form-group">
-                            <label for="animChickRes" class="ans-label">Chickens =</label>
-                            <input type="text" class="form-control answerInput" id="animChickRes" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="animCowRes" class="ans-label">Cows =</label>
-                            <input type="text" class="form-control answerInput" id="animCowRes" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="animHorseRes" class="ans-label">Horses =</label>
-                            <input type="text" class="form-control answerInput" id="animHorseRes" readonly>
-                        </div>
-                    </form>
-                </div>
-                <!-- Current/Future Age -->
-                <div class="col-md-4">
-                    <form role="form">
-                        <div class="form-group">
-                            <h3 class="text-center header-btn-margin">Current/Future Age
-                                <button type="button" class="btn btn-danger pull-left" id="curFutReset">RESET</button>
-                            </h3>
-                        </div>
-                        <div class="form-group">
-                            <div class="btn-group" data-toggle="buttons">
-                                <label class="btn btn-primary btn-md labelCheckRadio">
-                                    <input type="radio" id="radioCurrent"> Current </label>
-                                <label class="btn btn-primary btn-md labelCheckRadio">
-                                    <input type="radio" id="radioFuture"> Future </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="curFutAge">Age:</label>
-                            <input type="text" class="form-control" id="curFutAge" tabindex="3">
-                        </div>
-                        <div class="form-group">
-                            <label for="curFutYears">Years:</label>
-                            <input type="text" class="form-control" id="curFutYears" tabindex="4">
-                        </div>
-                        <div class="form-group">
-                            <label for="curFutRes" class="ans-label">Age =</label>
-                            <input type="text" class="form-control answerInput" id="curFutRes" readonly>
-                        </div>
-                    </form>
-                </div>
-                <!-- Gallons of Liquid -->
-                <div class="col-md-4">
-                    <form role="form">
-                        <div class="form-group">
-                            <h3 class="text-center gol-margin-fix">Gallons of Liquid
-                                <button type="button" class="btn btn-danger pull-left" id="golReset">RESET</button>
-                            </h3>
-                        </div>
-                        <div class="form-group">
-                            <label for="golGal">Gallons:</label>
-                            <input type="text" class="form-control" id="golGal" tabindex="5">
-                        </div>
-                        <div class="form-group">
-                            <label for="golCon">Containers:</label>
-                            <input type="text" class="form-control" id="golCon" tabindex="6">
-                        </div>
-                        <div class="form-group">
-                            <label for="golRes" class="ans-label">Containers =</label>
-                            <input type="text" class="form-control answerInput" id="golRes" readonly>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 
