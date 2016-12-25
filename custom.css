@@ -10,6 +10,10 @@ label {
     pointer-events: auto;
 }
 
+.userInput {
+    color: darkgoldenrod;
+}
+
 .answerInput {
     cursor: text;
     font-weight: bold;
